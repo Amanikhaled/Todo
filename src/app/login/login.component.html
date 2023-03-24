@@ -1,0 +1,12 @@
+<div class="wrapper">
+    <form class="form-signin">
+        <h2 class="form-signin-heading">Please login</h2>
+        <input type="text" class="form-control" name="username" placeholder="Enter your favorite qoute" required=""
+            autofocus="" [(ngModel)]="quote" />
+        <input type="text" [(ngModel)]="UserName" class="form-control" name="UserName" placeholder="Enter your name"
+            required="" />
+
+        <button (click)=" setUser()" class="btn btn-lg btn-primary btn-block justify-content-center"
+            [routerLink]="['Todo']" type="submit">Login</button>
+    </form>
+</div>

@@ -1,0 +1,15 @@
+<section class="TDForm">
+    <form class="w-50 m-auto my-5" (ngSubmit)="submitMyForm(form)" #form>
+        <label for="username">username</label>
+        <input class="form-control" name="username" ngModel type="text" id="username">
+        //ngmodel angular input is included in form-control==input
+        <label for="email">email</label>
+        <input class="form-control" ngModel name="email" type="email" id="email">
+
+        <label for="password">password</label>
+
+        <input class="form-control" ngModel name="password" type="password" id="password">
+        <input type="submit">
+    </form>
+
+</section>
