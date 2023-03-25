@@ -1,4 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToDOService } from '../to-do.service';
+import { UserDataService } from '../user-data.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -6,9 +10,11 @@ import { Component, ViewChild } from '@angular/core';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent {
-  // @ViewChild('form') myForm: NgForm | undefined;
-  submitMyForm(form: HTMLFormElement) {
-    console.log(this.myForm);
+  constructor(private _user: UserDataService, private _router: Router) {
 
+  }
+  submitMyForm(form: NgForm) {
+    this._user.signUpUser(form.value);
+    this._router.navigate(['login'])
   }
 }

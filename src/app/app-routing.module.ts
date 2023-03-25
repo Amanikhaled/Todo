@@ -5,6 +5,7 @@ import { FavoriteTodoComponent } from './favorite-todo/favorite-todo.component';
 import { LoginComponent } from './login/login.component';
 import { NavComponent } from './nav/nav.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 import { TodosComponent } from './todos/todos.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 
@@ -13,7 +14,7 @@ const routes: Routes = [
     path: 'Todo', component: TodosComponent
   },
   {
-    path: '', component: LoginComponent
+    path: 'login', component: LoginComponent
   },
   {
     path: 'Todo/Favorite', component: FavoriteTodoComponent
@@ -23,6 +24,9 @@ const routes: Routes = [
   },
   {
     path: 'user', component: UserDetailsComponent
+  },
+  {
+    path: '', component: SignUpComponent
   },
   {
     path: '**', component: NotFoundComponent

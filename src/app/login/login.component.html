@@ -1,12 +1,20 @@
-<div class="wrapper">
-    <form class="form-signin">
-        <h2 class="form-signin-heading">Please login</h2>
-        <input type="text" class="form-control" name="username" placeholder="Enter your favorite qoute" required=""
-            autofocus="" [(ngModel)]="quote" />
-        <input type="text" [(ngModel)]="UserName" class="form-control" name="UserName" placeholder="Enter your name"
-            required="" />
+<section class="ReactiveForm">
+  <div class="wrapper">
+    <form class="form-signin" [formGroup]="myForm" (ngSubmit)="submit()">
+      <h2 class="form-signin-heading">Please login</h2>
 
-        <button (click)=" setUser()" class="btn btn-lg btn-primary btn-block justify-content-center"
-            [routerLink]="['Todo']" type="submit">Login</button>
+      <input type="text" class="form-control" formControlName="qoute" name="username"
+        placeholder="Enter your favorite qoute" required="" autofocus="" />
+      <p *ngIf="myForm.get('qoute')?.touched &&myForm.get('qoute')?.errors?.['required']"
+        class="text-danger text-uppercase">qoute is required</p>
+
+      <input type="text" class="form-control" name="UserName" placeholder="Enter your name" formControlName="username"
+        required="" />
+      <p *ngIf="myForm.get('username')?.touched &&myForm.get('username')?.errors?.['required']"
+        class="text-danger text-uppercase">username is required</p>
+
+      <button (click)=" setUser()" class="btn btn-lg btn-primary btn-block justify-content-center"
+        type="submit">Login</button>
     </form>
-</div>
+  </div>
+</section>
