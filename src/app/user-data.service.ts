@@ -27,7 +27,7 @@ export class UserDataService {
   }
 
   loginUser(user: User) {
-    if (this.users.findIndex(e => e.username === user.username) !== -1 && this.users.findIndex(e => e.quote === user.quote) !== -1) {
+    if (this.users.findIndex(e => e.username === user.username) !== -1) {
       const index = this.users.findIndex(e => e.username === user.username)
 
       this._router.navigate(['Todo'])

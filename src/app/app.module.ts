@@ -13,6 +13,9 @@ import { DeletedTodoComponent } from './deleted-todo/deleted-todo.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { HttpComponent } from './http/http.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -26,13 +29,16 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     DeletedTodoComponent,
     NotFoundComponent,
     UserDetailsComponent,
-    SignUpComponent
+    SignUpComponent,
+    HttpComponent
   ],
   imports: [
     FormsModule,
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

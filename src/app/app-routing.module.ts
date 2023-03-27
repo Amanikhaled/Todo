@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DeletedTodoComponent } from './deleted-todo/deleted-todo.component';
 import { FavoriteTodoComponent } from './favorite-todo/favorite-todo.component';
+import { HttpComponent } from './http/http.component';
 import { LoginComponent } from './login/login.component';
 import { NavComponent } from './nav/nav.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -23,10 +24,13 @@ const routes: Routes = [
     path: 'Todo/deleted', component: DeletedTodoComponent
   },
   {
-    path: 'user', component: UserDetailsComponent
+    path: 'Todo/user', component: UserDetailsComponent
   },
   {
     path: '', component: SignUpComponent
+  },
+  {
+    path: 'http', component: HttpComponent
   },
   {
     path: '**', component: NotFoundComponent

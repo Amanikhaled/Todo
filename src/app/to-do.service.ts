@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ViewChild } from '@angular/core';
 import { Todo } from './todos/todos';
 
 
@@ -24,7 +24,6 @@ export class ToDOService {
     this.deletedTodo.push(this.list[index])
     this.list.splice(this.list.findIndex(el => el.id == id), 1)
     console.log(this.list);
-
   }
 
   Done(item: Todo) {

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToDOService } from '../to-do.service';
 import { Todo } from '../todos/todos';
 
@@ -22,14 +23,15 @@ export class TodoComponent {
   // todo: Todo = { id: 0, name: '', status: false };
   list: Todo[] = [];
 
-  constructor(private _todo: ToDOService) {
+  constructor(private _todo: ToDOService, private _router: Router) {
 
   }
 
 
   DeleteItem() {
     this._todo.DeleteItem(this.todo.id)
-
+    this._router.navigate(['Todo'])
+    document.querySelector(".modal-backdrop")?.remove()
   }
 
   Done() {
